@@ -1,0 +1,255 @@
+﻿<Window x:Class="GrpProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GrpProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1480" WindowStartupLocation="CenterScreen">
+    
+    
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
+    
+    
+    
+    <Grid Background="DarkGray">
+        
+        <StackPanel >
+        
+        <StackPanel Orientation="Horizontal" Width="1500" >
+            
+            
+            
+            <StackPanel Orientation="Vertical" Width="1360">
+                <StackPanel Height="650" Background="DarkGray" 
+                    VerticalAlignment="Top" Orientation="Vertical" >
+            <TextBlock Text="Informations Of All Students" Style="{StaticResource ListView}"
+                       FontSize="25" Width="380" Height="60" VerticalAlignment="Center"
+                       Margin="10" Padding="20" Background="Gray"></TextBlock>
+
+            <StackPanel Margin="40 0 0 0"  HorizontalAlignment="Left" 
+                         Width="1300" Background="Transparent" 
+                        Orientation="Horizontal" Height="50" >
+
+                <TextBlock Text="Reg_NO"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" 
+                           Style="{StaticResource ListView}" Margin="20 2" />
+                
+
+                <TextBlock Text="First_Name" FontSize="15" FontWeight="Bold"
+                           Foreground="Black"  
+                           Style="{StaticResource ListView}" 
+                           Margin="3"/>
+
+                <TextBlock Text="Last_Name" Foreground="Black"
+                           FontSize="15" FontWeight="Bold" Width="100" Margin="0 2"
+                           Style="{StaticResource ListView}" />
+
+               
+
+                <TextBlock Text="Age" Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="40" Margin="0 2 5 2"
+                           Style="{StaticResource ListView}" />
+
+                <TextBlock Text="Date_Of_Birth"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="100" Margin="2 2"
+                           Style="{StaticResource ListView}" />
+
+                <TextBlock Text="GPA"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="80"
+                           Style="{StaticResource ListView}" Margin="5" />
+
+                <TextBlock Text="Gender" Foreground="Black"  
+                           FontSize="15" FontWeight="Bold" Width="75" Margin="5"
+                           Style="{StaticResource ListView}" />
+
+                <TextBlock Text="Batch"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="80"
+                           Style="{StaticResource ListView}" Margin="0 2" />
+
+                 
+                
+
+                                
+                <TextBlock Text="EE3302"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="5" />
+
+
+                                
+                <TextBlock Text="EE3251"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="5" />
+
+
+
+                                
+                <TextBlock Text="EE3250"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="5" />
+
+                                
+                <TextBlock Text="EE3305"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="5" />
+
+                                
+                <TextBlock Text="IS3301"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="10 5" />
+                                
+                <TextBlock Text="IS3302"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="5" />
+                                
+                <TextBlock Text="EE3301"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="60"
+                           Style="{StaticResource ListView}" Margin="10 5" />
+                                
+                <TextBlock Text="EE3203"  Foreground="Black" 
+                           FontSize="15" FontWeight="Bold" Width="50"
+                           Style="{StaticResource ListView}" Margin="10 2" />
+
+
+                            
+            </StackPanel>
+            <Separator/>
+            <ScrollViewer>
+                <ListView x:Name="Listview"  Background="Beige"
+                      Height="500"
+                      ItemsSource="{Binding Student,UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding SelectedUser,UpdateSourceTrigger=PropertyChanged}" >
+
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Border Background="Aqua" BorderBrush="Black" 
+                                BorderThickness="3"
+                                Padding="0.2" CornerRadius="10" Width="1320"
+                                Height="50" Margin="10 2 0 2" >
+
+                        <StackPanel Width="1310"  Background="Transparent" 
+                                        Orientation="Horizontal" >
+
+                            <Image Width="40" Height="40" Margin="2"  />
+                            <TextBlock Text="{Binding RegNo,UpdateSourceTrigger=PropertyChanged}"  
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged}"  
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" />
+                           
+                            <TextBlock Text="{Binding Age,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding DateOfBirth,UpdateSourceTrigger=PropertyChanged}"  
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding GPA,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding Sex,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" />
+                            <TextBlock Text="{Binding Batch,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" />
+
+
+                            <TextBlock Text="{Binding  Data,UpdateSourceTrigger=PropertyChanged}"  
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                            <TextBlock Text="{Binding Project,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5" />
+                            <TextBlock Text="{Binding Gui,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                            <TextBlock Text="{Binding Signal,UpdateSourceTrigger=PropertyChanged}"  
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                            <TextBlock Text="{Binding Acon,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                            <TextBlock Text="{Binding Maths,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                            <TextBlock Text="{Binding Analog,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+                                                   
+                            <TextBlock Text="{Binding Elec,UpdateSourceTrigger=PropertyChanged}" 
+                                           Style="{StaticResource ListView}" Width="60" FontSize="15" Margin="5"/>
+
+
+
+
+                                               
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+         </ListView>
+            </ScrollViewer>
+        </StackPanel>
+                   
+                
+                
+
+          <StackPanel Height="80"  Width="1290" Orientation="Horizontal"
+                      Background="DarkGray">
+            <Button Content="Back" FontSize="20" x:Name="backbtn2" Height="50" Width="100" 
+                    Margin="10 2 520 10" Style="{StaticResource mainbutten}" 
+                    Background="Red" FontWeight="Bold" Click="backbtn2_Click">
+                
+            </Button>
+            <Button Content="Exit" FontSize="20" x:Name="exitbtn2" Height="50" Width="100" 
+                    Margin="500 2 10 10" Style="{StaticResource mainbutten}" 
+                    Background="Red" FontWeight="Bold" Click="exitbtn2_Click">
+
+            </Button>
+
+            
+          </StackPanel>
+
+                    
+           
+
+
+
+          </StackPanel>
+            
+
+
+       
+
+                <StackPanel Background="DarkGray">
+
+                    <Button x:Name="Addbtn" Content="Add" Width="100" Height="50" FontSize="20" 
+                        Margin="10 150 0 50"  Style="{StaticResource mainbutten}"
+                        FontWeight="Bold" Command="{Binding AddStudentCommand}">
+
+                    </Button>
+                    
+                    
+                    <Button x:Name="Editbtn" Content="Update" Width="100" Height="50" FontSize="20" 
+                        Margin="10 40 0 50" Style="{StaticResource mainbutten}"
+                        FontWeight="Bold" Command="{Binding ExecuteEditStudentCommand}">
+
+                    </Button>
+                    <Button x:Name="Deletebtn" Content="Delete" Width="100" Height="50" FontSize="20" 
+                        Margin="10 40 0 50" Style="{StaticResource mainbutten}"
+                        FontWeight="Bold" Command="{Binding DeleteCommand}">
+
+                    </Button>
+
+                   
+
+                   
+
+
+
+                </StackPanel>
+               
+        </StackPanel>
+
+
+
+
+
+
+
+            </StackPanel>
+
+        
+    </Grid>
+</Window>
